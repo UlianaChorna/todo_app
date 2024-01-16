@@ -41,7 +41,7 @@ export const TodoItem:React.FC<Props> = ({ todo }) => {
     }
   }, [editStatus]);
 
-  const handleLableDoubleClick = () => {
+  const handleLabelDoubleClick = () => {
     setEditStatus(true);
   };
 
@@ -93,7 +93,9 @@ export const TodoItem:React.FC<Props> = ({ todo }) => {
           checked={todo.completed}
           onChange={() => handleCompleteTodo(todo.id)}
         />
-        <label onDoubleClick={handleLableDoubleClick}>{todo.title}</label>
+        <label htmlFor="title" onDoubleClick={handleLabelDoubleClick}>
+          {todo.title}
+        </label>
         <button
           aria-label="deleteTodo"
           type="button"

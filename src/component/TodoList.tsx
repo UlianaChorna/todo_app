@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { TodoItem } from './TodoItem';
 import { TodosContext } from '../TodosContext';
+// eslint-disable-next-line import/order
+import * as React from 'react';
 
 export default function TodoList() {
   const {
@@ -25,15 +27,19 @@ export default function TodoList() {
     <>
       {!!todos.length && (
         <section className="main">
-          <input
-            checked={isToggleAllStatus}
-            type="checkbox"
-            id="toggle-all"
-            className="toggle-all"
-            data-cy="toggleAll"
-            onChange={handleToggleAll}
-          />
-          <label htmlFor="toggle-all">Mark all as complete</label>
+
+          <label htmlFor="toggle-all">
+            Mark all as complete
+
+            <input
+              checked={isToggleAllStatus}
+              type="checkbox"
+              id="toggle-all"
+              className="toggle-all"
+              data-cy="toggleAll"
+              onChange={handleToggleAll}
+            />
+          </label>
 
           <ul className="todo-list" data-cy="todoList">
             {filterTodos.map(todo => (
