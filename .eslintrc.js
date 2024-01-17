@@ -16,7 +16,13 @@ module.exports = {
 
     // TypeScript
     '@typescript-eslint/no-unused-vars': ['error'],
-    '@typescript-eslint/camelcase': 0,
+    '@typescript-eslint/camelcase': [0,
+      {
+        properties: 'never',
+        ignoreDestructuring: false,
+        ignoreImports: false,
+        ignoreGlobals: false,
+      }],
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/ban-types': 0,
     '@typescript-eslint/semi': ['error'],
